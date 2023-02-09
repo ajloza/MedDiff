@@ -1,0 +1,109 @@
+<!DOCTYPE html class="h-100">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedDiff</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="d-flex flex-column h-100">
+
+    <nav class="navbar navbar-light bg-white border-bottom">
+        <div class="container-fluid">
+            <div>
+                <span class="navbar-brand" href="">MedDiff</span>
+                <span class="navbar-text" href="#"> compare medication lists</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems" aria-controls="navItems" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navItems">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <span class="navbar-text">
+                    <p>Medication lists are compared showing matching medications, new medications, and discontinued medications. Changes in medications that match on compoud name are highlighted.</p>
+                    <p> <span style="font-weight: bold;" class="bg-lblue">Blue</span> medications have an exact match between the two lists</p>
+                    <p> <span style="font-weight: bold;" class="bg-vlyellow">Yellow</span> medications have a partial match between the two lists. Within these, deleted details are denoted by <span class="bg-lightred" data-bs-toggle="tooltip" data-bs-placement="top" title="Deleted Text Appears Here">&#215</span> (hover over to see what was deleted) and added details are denoted by <span style="font-weight: bold;" class="bg-lgreen"> green bold text</span></p>
+                    <p> <span style="font-weight: bold;" class="bg-lgreen">Green</span> medications are new on the main list compared to the reference list</p>
+                    <p> <span style="font-weight: bold;" class="bg-lightred">Red</span> medications are on the reference list but not on the main list</p>
+                </span>  
+              </div>
+        </div>
+    </nav>
+    <div class="container-xlg p-1 justify-content-center h-100 overflow-auto">
+        
+        <br>
+  
+          <div class="alert bg-lblue alert-dismissible fade show" role="alert">
+            <strong>Discalmer:</strong> This tool is not a substitue for clinical reasoning. Best matching and difference highlighting has been attempted but may be imperfect.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <div class="row">
+                
+            <div class="col-12 col-md-8">
+                <div class="p-3 mb-4 bg-white rounded-3 h-100">
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h5>Reference List</h5>
+                        <hr>
+                        <textarea id="refText" rows="25" placeholder="Enter ref list here" class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                    </div>
+                    <div class="col-12 col-md-6">
+                            <h5>Main List</h5>
+                            <hr>
+                            <textarea id="mainText" rows="25" placeholder="Enter main list here" class=" w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <button id="compareBtn" class="btn btn-primary bg-dblue border-none">Compare</button>  
+                </div>
+                </div>
+     </div>
+            <div class="col-12 col-md-4">
+                <div class="p-3 mb-4 bg-light rounded-3 h-100" >
+                    <h5>Comparison</h5>
+                    <hr>
+                    <div id="diffList" class="p-3 mb-4 rounded-3 bg-light" style="height: 87%; display: none;">
+                        <h6>Matched</h6>
+                        <ul id = "matched" class="list-group list-group-flush" style="font-size: 10pt;">
+                            
+                        </ul>
+                        <h6>Modified</h6>
+                        <ul id = "modified" class="list-group border-lyellow list-group-flush" style="font-size: 10pt;">
+                        </ul>
+                        <h6>Added</h6>
+                        <ul id="added" class="list-group list-group-flush" style="font-size: 10pt;">
+
+                        </ul>
+                        <h6>Removed</h6>
+                        <ul id = "removed" class="list-group list-group-flush" style="font-size: 10pt;">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        </div>
+    </div>
+
+    <footer class="navbar-fixed-bottom bg-light border-top">
+          <span class="navaber-text p-1"> &copy; 2023 Andrew Loza and Ben Carey</span>
+    </footer>
+
+    <script src="js/diff.js"></script>
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/matching.js"></script>
+    <script src="js/MedClasses.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <script></script>
+</body>
+</html>
