@@ -34,6 +34,12 @@ $(document).ready(function(){
     
     activateTooltips();
 
+    $('#demoBtn').click(function(){
+        $("#refText").val("     Active Inpatient Medications                           Status\n=========================================================\n1)   ATORVASTATIN TAB  80MG PO QPM ACTIVE\n2)   CLOPIDOGREL BISULFATE TAB  75MG PO DAILY               ACTIVE\n3)   FAMOTIDINE TAB  20MG PO DAILY                          ACTIVE\n4)   EMPAGLIFLOZIN TAB,ORAL  12.5MG PO DAILY                ACTIVE \n5)  METOPROLOL SUCCINATE (EXTENDED-RELEASE)  12.5MG PO     ACTIVE \n       DAILY(EVENING)");
+        $("#mainText").val("     Active Inpatient Medications                           Status\n========================================================\n1)   ATORVASTATIN TAB  80MG PO QPM ACTIVE\n2)   FAMOTIDINE TAB  40MG PO DAILY                          ACTIVE\n3)   EMPAGLIFLOZIN TAB,ORAL  12.5MG PO DAILY                ACTIVE \n4)  METOPROLOL TARTRATE (IMMEDIATE-RELEASE)  12.5MG PO     ACTIVE \n       DAILY(EVENING)\n 5)   METFORMIN TAB 500MG PO DAILY");
+        console.log("test")
+    });
+
     $('#compareBtn').click(function(){
         $('#matched').empty()
         $('#modified').empty()
