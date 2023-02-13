@@ -35,3 +35,10 @@ Header will be ignored if followed by line of equal signs
    2. a red "x" is a placeholder for deleted text, hovering shows what's deleted
 5. Reference meds that do not match are considered "Removed"
 6. Main medications that do not match are considered "Added"
+
+
+## Todo:
+
+- [ ] change color highlighting red+green = yellow and collapse red
+- [ ] develop synonymns for route, frequency, units
+- [ ] export list in nice format to clipboard
