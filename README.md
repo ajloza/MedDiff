@@ -39,6 +39,21 @@ Header will be ignored if followed by line of equal signs
 
 ## Todo:
 
+working on allowing 3 types of comparisons:
+ - inpatient to inpatient
+ - outpatient to in patient (for admit med rec)
+ - inpatient to outpatient (discharge)
+
+functionality
+ - comparison
+ - add a structured med
+ - designate
+
+### current version:
 - [ ] change color highlighting red+green = yellow and collapse red
 - [ ] develop synonymns for route, frequency, units
 - [ ] export list in nice format to clipboard
+
+### improved outpatient med rec:
+- [ ] ability to add a structured med from the VA master list
+- [ ] designate each med as "not taking", "taking", "taking differently"
