@@ -50,8 +50,9 @@ functionality
  - designate
 
 ### current version:
-- [ ] change color highlighting red+green = yellow and collapse red
+- [x] change color highlighting red+green = yellow and collapse red
 - [ ] develop synonymns for route, frequency, units
+- [ ] dictionary for medication synonyms for in/outpatient matching
 - [ ] export list in nice format to clipboard
 
 ### improved outpatient med rec:
