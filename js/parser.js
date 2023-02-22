@@ -23,10 +23,11 @@ function getMedStrings(text,fmt="VA") {
     }
     const ws = /\n/g;
     const extraWords = /ACTIVE/g;
-    text = text.replaceAll(ws," ");
+   
     text = text.replaceAll(extraWords,"");
     // split on the numbers
-    text = text.split(/[0-9]+\)/);
+    text = text.split(/^\s*[0-9]+\)|\n\s*[0-9]+\)/);
+    // text = text.map(t => t.replaceAll(ws," "));
     text = text.map(t => t.trim());
     text = text.filter(t => t );
 
