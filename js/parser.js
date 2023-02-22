@@ -27,7 +27,6 @@ function getMedStrings(text,fmt="VA") {
     text = text.replaceAll(extraWords,"");
     // split on the numbers
     text = text.split(/^\s*[0-9]+\)|\n\s*[0-9]+\)/);
-    // text = text.map(t => t.replaceAll(ws," "));
     text = text.map(t => t.trim());
     text = text.filter(t => t );
 
