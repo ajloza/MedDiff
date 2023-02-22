@@ -6,26 +6,37 @@ function colorizeModfiedTokens(tokens) {
         if (t.added) {
             if (mod_flag) {
                 str = str.concat(
-                    "<span class='bg-lyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
+                    " <span class='bg-lyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
                     rem_str,
-                    "'> ",
+                    "'>",
                     t.value.join(" "),
-                    " </span>"
+                    "</span> "
                     );
                     rem_str = "";
                     mod_flag = false;
             } else {
-                str = str.concat("<span style='font-weight: bold;' class='bg-lgreen'>"," ",t.value.join(" ")," ","</span>");
+                str = str.concat(" ","<span style='font-weight: bold;' class='bg-lgreen'>",t.value.join(" "),"</span>"," ");
             }
         }
         else if (t.removed) {
             rem_str = t.value.join(" ");
             mod_flag = true;
         } else {
-            str = str.concat(t.value.join(" "));
+            if (mod_flag) {
+                str = str.concat(
+                    " <span class='bg-lightred' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
+                    rem_str,
+                    "'>",
+                    "&#215",
+                    "</span> "
+                    );
+                    rem_str = "";
+                    mod_flag = false;
+                    str = str.concat(t.value.join(" "));
+            } else {
+                str = str.concat(t.value.join(" "));
+            }
         }
-
-        
     })
 
     if (mod_flag) {
@@ -38,6 +49,22 @@ function colorizeModfiedTokens(tokens) {
             );
     }
     return str;
+}
+
+
+function tooltipFallBack(display,tooltip) {
+
+    let str = "";
+    str = str.concat(
+        " <span class='bg-lyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
+        tooltip.join(" "),
+        "'>",
+        display.join(" "),
+        "</span> "
+        );
+
+    return str;
+
 }
 
 function activateTooltips() {
@@ -64,13 +91,23 @@ $(document).ready(function(){
         $('#modified').empty()
         $('#added').empty()
         $('#removed').empty()
-        let refMedTokens = parseText($("#refText").val());
-        let mainMedTokens = parseText($("#mainText").val());
+        $('#matchType').empty()
+        let [refMedTokens,listTypeRef] = parseText($("#refText").val());
+        let [mainMedTokens,listTypeMain] = parseText($("#mainText").val());
 
-        refMeds = refMedTokens.map(m => new MedEntry(m,ListID.ref));
-        mainMeds = mainMedTokens.map(m => new MedEntry(m,ListID.main));
+        refMeds = refMedTokens.map(m => new MedEntry(m,ListID.ref,listTypeRef));
+        mainMeds = mainMedTokens.map(m => new MedEntry(m,ListID.main,listTypeMain));
 
         diffMedList(refMeds,mainMeds);
+
+        let useOutScheme = false;
+        if (listTypeMain=="out" || listTypeRef == "out") {
+            useOutScheme = true;
+        }
+
+        let compareType = "";
+        compareType = compareType.concat("Comparison type: ",refMeds[0].listType," to ",mainMeds[0].listType);
+        $("#matchType").append(compareType)
 
         mainMeds.forEach(e => {
             if (e.matchStatus == MedMatchStatus.completeMatch) {
@@ -84,7 +121,14 @@ $(document).ready(function(){
                 $("#added").append(htmlstring);
             }
             if (e.matchStatus == MedMatchStatus.modified) {
-                let medstring = colorizeModfiedTokens(e.diffTokens);
+                
+                let medstring = "";
+                if (useOutScheme) {
+                    medstring = tooltipFallBack(e.tokens,refMeds[e.matchID].tokens);
+                } else {
+                    medstring = colorizeModfiedTokens(e.diffTokens);
+                }
+
                 let htmlstring = ["<li class='list-group-item'>",medstring,"</li>"].join("");
                 $("#modified").append(htmlstring);
             }

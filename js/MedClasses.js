@@ -1,8 +1,9 @@
 class MedEntry {
-    constructor(tokens,whichList,matchTried = false, matchID = -1) {
+    constructor(tokens,whichList,listType,matchTried = false, matchID = -1) {
         this.tokens = tokens;
         this.diffTokens = [];
         this.whichList = whichList;
+        this.listType = listType;
         this.matchTried = matchTried;
         this.matchID = matchID;
         this.completeMatch = false;
@@ -37,5 +38,10 @@ const MedMatchStatus = {
  const ListID = {
     ref: "ref",
     main: "main"
+ }
+ const ListType = {
+    inp: "inp",
+    out: "out",
+    none: "none"
  }
 

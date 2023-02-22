@@ -1,11 +1,23 @@
 function parseText(text,fmt="VA") {
-
+    let listType = getListType(text);
     let medStrings = getMedStrings(text,fmt=fmt);
     let medTokens = medStringsToTokens(medStrings);
-    return medTokens;
+    return [medTokens,listType];
 
 }
 
+function getListType(text) {
+
+    let listType = ListType.none;
+
+    if (text.match(/Outpatient Med/)!==null){
+        listType = ListType.out;
+    } else if (text.match(/Inpatient Med/)!==null) {
+        listType = ListType.inp;
+    }
+
+    return listType;
+}
 
 function medStringsToTokens(strings) {
     let tokens = strings.map(s => s.split(" ").filter(t => t));
