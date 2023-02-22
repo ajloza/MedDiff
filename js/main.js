@@ -1,23 +1,42 @@
 function colorizeModfiedTokens(tokens) {
     let str = "";
+    let rem_str = "";
+    let mod_flag = false;
     tokens.forEach(t => {
         if (t.added) {
-            str = str.concat("<span style='font-weight: bold;' class='bg-lgreen'>"," ",t.value.join(" ")," ","</span>");
+            if (mod_flag) {
+                str = str.concat(
+                    "<span class='bg-lyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
+                    rem_str,
+                    "'> ",
+                    t.value.join(" "),
+                    " </span>"
+                    );
+                    rem_str = "";
+                    mod_flag = false;
+            } else {
+                str = str.concat("<span style='font-weight: bold;' class='bg-lgreen'>"," ",t.value.join(" ")," ","</span>");
+            }
         }
         else if (t.removed) {
-            str = str.concat(
-                "<span class='bg-lightred' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
-                t.value.join(" "),
-                "'>",
-                "&#215",
-                "</span>"
-                );
+            rem_str = t.value.join(" ");
+            mod_flag = true;
         } else {
             str = str.concat(t.value.join(" "));
         }
 
         
     })
+
+    if (mod_flag) {
+        str = str.concat(
+            "<span class='bg-lightred' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='",
+            rem_str,
+            "'>",
+            "&#215",
+            "</span>"
+            );
+    }
     return str;
 }
 
