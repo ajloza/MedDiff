@@ -101,7 +101,7 @@ $(document).ready(function(){
         diffMedList(refMeds,mainMeds);
 
         let useOutScheme = false;
-        if (listTypeMain=="out" || listTypeRef == "out") {
+        if ((listTypeMain=="out" && listTypeRef == "inp") || (listTypeMain=="inp" && listTypeRef == "out")) {
             useOutScheme = true;
         }
 
