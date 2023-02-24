@@ -24,11 +24,11 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <span class="navbar-text">
-                    <p>Medication lists are compared showing matching medications, new medications, and discontinued medications. Changes in medications that match on compoud name are highlighted.</p>
-                    <p> <span style="font-weight: bold;" class="bg-lblue">Blue</span> medications have an exact match between the two lists</p>
-                    <p> <span style="font-weight: bold;" class="bg-vlyellow">Yellow</span> medications have a partial match between the two lists. Within these, deleted details are denoted by <span class="bg-lightred" data-bs-toggle="tooltip" data-bs-placement="top" title="Deleted Text Appears Here">&#215</span> (hover over to see what was deleted) and added details are denoted by <span style="font-weight: bold;" class="bg-lgreen"> green bold text</span></p>
-                    <p> <span style="font-weight: bold;" class="bg-lgreen">Green</span> medications are new on the main list compared to the reference list</p>
-                    <p> <span style="font-weight: bold;" class="bg-lightred">Red</span> medications are on the reference list but not on the main list</p>
+                    <p>Medication lists are compared showing matching medications, modified medications, new medications, and discontinued medications.</p>
+                    <p> <span style="font-weight: bold;" class="bg-lblue">Blue</span> medications have an exact match in both lists. They are classified as "matched."</p>
+                    <p> <span style="font-weight: bold;" class="bg-vlyellow">Yellow</span> medications have a partial match between both lists. They are classified as "modified." The medication from the main list is displayed, with the modification highlighted in <span style="font-weight: bold;" class="bg-vlyellow">yellow</span>. Hover over the highlighted text to display modified text from the reference list.</p>
+                    <p> <span style="font-weight: bold;" class="bg-lgreen">Green</span> medications appear on the main list but not on the reference list. They are classified as "added."</p>
+                    <p> <span style="font-weight: bold;" class="bg-lightred">Red</span> medications appear on the reference list but not on the main list. They are classified as "removed."</p>
                 </span>  
               </div>
         </div>
@@ -38,7 +38,12 @@
         <br>
   
           <div class="alert bg-lblue alert-dismissible fade show" role="alert">
-            <strong>Discalmer:</strong> This tool is not a substitue for clinical reasoning. Best matching and difference highlighting has been attempted but may be imperfect.
+            <strong>Disclaimers:</strong> 
+            <ul>
+                <li>Please ensure all protected health information (PHI) has been removed prior to use.</li>
+                <li>This tool is not a substitue for clinical reasoning. Best matching and difference highlighting have been attempted but may be imperfect.</li>
+                <li>If you notice an error, please email george.carey@va.gov. Please include a screenshot or the medication, inlcuding both inpatient and outpatient information if applicable.</li>
+            </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <div class="row">
