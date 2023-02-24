@@ -50,10 +50,12 @@ functionality
  - designate
 
 ### current version:
-- [x] change color highlighting red+green = yellow and collapse red
 - [ ] develop synonymns for route, frequency, units
 - [ ] dictionary for medication synonyms for in/outpatient matching
 - [ ] export list in nice format to clipboard
+- [x] change color highlighting red+green = yellow and collapse red
+- [x] add PHI disclaimer
+- [x] update legends
 
 ### improved outpatient med rec:
 - [ ] ability to add a structured med from the VA master list
