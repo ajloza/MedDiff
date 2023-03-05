@@ -1,0 +1,41 @@
+.grad-background {
+    background-color: rgba(176, 176, 255, 0.213); /* fallback if no gradient support */
+    background-image: linear-gradient(to bottom right, #c3cfe2, #f5f7fa);
+    height: 100vh;
+    width: 100%;
+  }
+
+.bg-lblue {
+    background-color: #e3ebf7;
+
+  }
+
+.bg-dblue {
+    background-color: #3b71ca;
+
+  }
+.bg-lyellow {
+    background-color: #FFE082;
+
+  }
+  .bg-vlyellow {
+    background-color: #FFF8E1;
+  }
+  .border-lyellow {
+    list-style-position:inside;
+    border-color: #FFE082;
+    border-width: 2px important!;
+    border-style: solid;
+  }
+  
+  .bg-lightred {
+    background-color: #FFCDD2;
+
+  }
+
+  .bg-lgreen {
+    background-color: #DCEDC8;
+
+  }
+
+  .bi { vertical-align: -0.1em; }

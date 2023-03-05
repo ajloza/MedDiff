@@ -1,0 +1,68 @@
+<!DOCTYPE html class="h-100">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedDiff</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="d-flex flex-column h-100">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dblue border-bottom">
+        <div class="container-fluid">
+            <a class="me-auto navbar-brand px-4">MedReview</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".item-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse item-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Admission.html">Admission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Discharge.html">Discharge</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <div class="container-xlg p-1 justify-content-center h-100 overflow-auto">
+        
+        
+        <br><br><br>
+        <div class="row">
+                
+            <div class="col-8 mx-auto my-auto ">
+                <div class="p-3  mb-4 bg-white shadow rounded-3 h-100" >
+                    <span class="">
+                        <p>Medication lists are compared showing matching medications, modified medications, new medications, and discontinued medications.</p>
+                        <p> <span style="font-weight: bold;" class="bg-lblue">Blue</span> medications have an exact match in both lists. They are classified as "matched."</p>
+                        <p> <span style="font-weight: bold;" class="bg-vlyellow">Yellow</span> medications have a partial match between both lists. They are classified as "modified." The medication from the main list is displayed, with the modification highlighted in <span style="font-weight: bold;" class="bg-vlyellow">yellow</span>. Hover over the highlighted text to display modified text from the reference list.</p>
+                        <p> <span style="font-weight: bold;" class="bg-lgreen">Green</span> medications appear on the main list but not on the reference list. They are classified as "added."</p>
+                        <p> <span style="font-weight: bold;" class="bg-lightred">Red</span> medications appear on the reference list but not on the main list. They are classified as "removed."</p>
+                    </span>  
+                 </div>
+            </div>
+        </div>
+             
+
+    </div>
+
+    <footer class="navbar-fixed-bottom bg-light border-top">
+          <span class="navaber-text p-1"> &copy; 2023 Andrew Loza and Ben Carey</span>
+    </footer>
+
+    <script src="js/diff.js"></script>
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/matching.js"></script>
+    <script src="js/MedClasses.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <script></script>
+</body>
+</html>

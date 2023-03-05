@@ -1,0 +1,122 @@
+<!DOCTYPE html class="h-100">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedDiff</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="d-flex flex-column h-100">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dblue border-bottom">
+        <div class="container-fluid">
+            <a class="me-auto navbar-brand px-4">MedReview</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target=".item-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse item-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Admission.html">Admission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Discharge.html">Discharge</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <div class="container-xlg p-1 justify-content-center h-100 overflow-auto">
+        
+        <br>
+  
+        <div class="alert bg-lblue alert-dismissible fade show" role="alert">
+            <strong>Disclaimers:</strong> 
+            <ul>
+                <li>Please ensure all protected health information (PHI) has been removed prior to use.</li>
+                <li>This tool is not a substitue for clinical reasoning. Best matching and difference highlighting have been attempted but may be imperfect.</li>
+                <li>If you notice an error, please email george.carey@va.gov. Please include a screenshot or the medication, inlcuding both inpatient and outpatient information if applicable.</li>
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+                
+
+            <div id = "inputArea" class="col-8 mx-auto">
+                <div class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100" >
+
+                <h5>Input List</h5>
+                <hr>
+                <textarea id="inputText" rows="25" placeholder="Enter ref list here" class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                </div>
+            </div>
+
+            <div id = "recArea" class="col-8 mx-auto" style="display: none;">
+                <div class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100" >
+                        <h5>Reconcile</h5>
+
+                    <hr>
+                    <div id="diffList" class="p-3 mb-4 rounded-3 bg-white" style="height: 87%">
+                        <br>
+
+                        <table class="table table-hover bg-white">
+                            <thead>
+                                <tr class="d-flex">
+                                    <th class = "col-8">Medication </th>
+                                    <th class = "col-4">Patient Report</th>
+                                </tr>    
+                            </thead>
+                            <tbody id="medList" style="font-size: 10pt;"">
+                                
+    
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="d-grid gap-2 col-4 mx-auto">
+                                <button type="button" class="btn btn-primary bg-dblue border-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+                    </svg>
+                                    Generate Note
+                                  </button>
+                            </div>
+                        </div>   
+                        
+                    </div>
+                </div>
+            </div>
+                
+
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button id="recBtn" class="btn btn-primary bg-dblue border-none">Reconcile</button>  
+                <button id="demoBtn" class="btn btn-outline-secondary">Demo Text</button>  
+            </div>
+        </div>       
+
+    </div>
+
+    <footer class="navbar-fixed-bottom bg-light border-top">
+          <span class="navaber-text p-1"> &copy; 2023 Andrew Loza and Ben Carey</span>
+    </footer>
+
+    <script src="js/diff.js"></script>
+    <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/matching.js"></script>
+    <script src="js/MedClasses.js"></script>
+    <script src="js/admission.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <script></script>
+</body>
+</html>
