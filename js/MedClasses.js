@@ -19,11 +19,13 @@ class MedEntry {
         if (this.matchID != -1) {
             return MedMatchStatus.modified;
         }
-        if (this.whichList==ListID.ref) {
+        if (this.whichList==ListID.ref || this.whichList==ListID.outpatient) {
             return MedMatchStatus.removed;
-        } else if (this.whichList==ListID.main) {
+        } else if (this.whichList==ListID.main || this.whichList==ListID.discharge) {
             return MedMatchStatus.added;
-        } 
+        } else if (this.whichList==ListID.inpatient) {
+            return MedMatchStatus.removed;
+        }
     }
 }
 
@@ -32,12 +34,15 @@ const MedMatchStatus = {
     completeMatch: "completeMatch",
     modified: "modified",
     added: "added",
-    removed: "removed"
+    removed: "removed",
  }
 
  const ListID = {
     ref: "ref",
-    main: "main"
+    main: "main",
+    outpatient: "outpatient",
+    inpatient: "inpatient",
+    discharge: "discharge"
  }
  const ListType = {
     inp: "inp",

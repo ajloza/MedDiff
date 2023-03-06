@@ -29,11 +29,10 @@
         </div>
         </div>
     </nav>
+
     <div class="container-xlg p-1 justify-content-center h-100 overflow-auto">
-        
         <br>
-  
-          <div class="alert bg-lblue alert-dismissible fade show" role="alert">
+        <div class="alert bg-lblue alert-dismissible fade show" role="alert">
             <strong>Disclaimers:</strong> 
             <ul>
                 <li>Please ensure all protected health information (PHI) has been removed prior to use.</li>
@@ -41,11 +40,11 @@
                 <li>If you notice an error, please email george.carey@va.gov. Please include a screenshot or the medication, inlcuding both inpatient and outpatient information if applicable.</li>
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+        </div>
+
         <div class="row">
                 
-            <div class="col-12">
-                <!-- Nav tabs -->
+            <div class="col-12" id="inputPane">
                 <ul class="nav nav-tabs" id="inputTabList" role="tablist">
                     <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="true">Admission</button>
@@ -58,51 +57,104 @@
                     </li>
                 </ul>
                 
-                <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane active" id="admission" role="tabpanel" aria-labelledby="admission-tab">
-                        <textarea id="refText" rows="25" placeholder="Enter outpatient list on admission." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                    <div class="tab-pane active col-lg-8 mx-auto" id="admission" role="tabpanel" aria-labelledby="admission-tab">
+                        <br>
+                        <textarea id="outpatientText" rows="25" placeholder="Enter outpatient list on admission." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
                     </div>
-                    <div class="tab-pane" id="inpatient" role="tabpanel" aria-labelledby="inpatient-tab">
-                        <textarea id="refText" rows="25" placeholder="Enter last inpatient list." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                    <div class="tab-pane col-lg-8 mx-auto" id="inpatient" role="tabpanel" aria-labelledby="inpatient-tab">
+                        <br>
+                        <textarea id="inpatientText" rows="25" placeholder="Enter last inpatient list." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
                     </div>
-                    <div class="tab-pane" id="discharge" role="tabpanel" aria-labelledby="discharge-tab">
-                        <textarea id="refText" rows="25" placeholder="Enter outpatient list for discharge." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
+                    <div class="tab-pane col-lg-8 mx-auto" id="discharge" role="tabpanel" aria-labelledby="discharge-tab">
+                        <br>
+                        <textarea id="dischargeText" rows="25" placeholder="Enter outpatient list for discharge." class="w-100 form-control form-rounded" style="font-size: 8pt;"></textarea>
                     </div>
                 </div>
 
+                <br><br>
 
-                <br><br><br>
-                <div class="d-grid gap-2 col-4 mx-auto">
-                    <button id="compareBtn" class="btn btn-primary bg-dblue border-none">Compare</button>  
-                    <button id="demoBtn" class="btn btn-outline-secondary">Demo Text</button>  
+            </div>
+
+            <div id = "comparisonPane" class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100" style="display: none;">
+                <h5>Comparison</h5>
+                <hr>
+
+
+                <div id="diffList" class="p-3 mb-4 rounded-3 bg-white col-md-10 mx-auto" style="height: 87%">
+                    <br>
+
+                    <table class="table table-hover bg-white">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class = "col-10">Contiued on Discharge</th>
+                                <th class = "col-2 text-center">Inpatient Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matchedMedList" style="font-size: 10pt;"">
+                            
+                        </tbody>
+                    </table>
+                    <table class="table table-hover bg-white">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class = "col-10">Modified on Discharge</th>
+                                <th class = "col-2 text-center">Inpatient Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modifiedMedList" style="font-size: 10pt;"">
+                            
+                        </tbody>
+                    </table>
+                    <table class="table table-hover bg-white">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class = "col-10">Added on Discharge</th>
+                                <th class = "col-2 text-center">Inpatient Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody id="addedMedList" style="font-size: 10pt;"">
+                            
+                        </tbody>
+                    </table>
+                    <table class="table table-hover bg-white">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class = "col-10">Discontiued on Discharge</th>
+                                <th class = "col-2 text-center">Inpatient Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody id="discontinuedMedList" style="font-size: 10pt;"">
+                            
+                        </tbody>
+                    </table>
+
+                    <table class="table table-hover bg-white">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class = "col-12">Additional Inpatient Meds for Review</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inpatientOnlyMedList" style="font-size: 10pt;"">
+                            
+                        </tbody>
+                    </table>
+                    
                 </div>
+                <br>
+                <div class="d-grid gap-2 col-4 mx-auto" style="display: none;"">
+                    <button id="backBtn" class="btn btn-primary bg-dblue border-none">Back to Input</button>  
+                </div>
+                
+            </div>
+
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button id="compareBtn" class="btn btn-primary bg-dblue border-none">Compare</button>  
+                <button id="demoBtn" class="btn btn-outline-secondary">Demo Text</button>  
             </div>
 
             
-                <div class="p-3 mb-4 bg-light rounded-3 h-100" style="display: none;">
-                    <h5>Comparison</h5>
-                    <hr>
-                    <div id="diffList" class="p-3 mb-4 rounded-3 bg-light" style="height: 87%; display: none;">
-                        <h6>Matched</h6>
-                        <ul id = "matched" class="list-group list-group-flush" style="font-size: 10pt;">
-                            
-                        </ul>
-                        <h6>Modified</h6>
-                        <ul id = "modified" class="list-group border-lyellow list-group-flush" style="font-size: 10pt;">
-                        </ul>
-                        <h6>Added</h6>
-                        <ul id="added" class="list-group list-group-flush" style="font-size: 10pt;">
-
-                        </ul>
-                        <h6>Removed</h6>
-                        <ul id = "removed" class="list-group list-group-flush" style="font-size: 10pt;">
-
-                        </ul>
-                        <br>
-                        <p id="matchType" <p class="text-muted" st></p>
-                    </div>
-                </div>
+                
             
         </div>       
         </div>
@@ -117,7 +169,7 @@
     <script src="js/parser.js"></script>
     <script src="js/matching.js"></script>
     <script src="js/MedClasses.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/discharge.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.bundle.min.js.map"></script>
     <script></script>

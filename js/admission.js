@@ -33,6 +33,16 @@ $(document).ready(function(){
         });
         $("#recArea").show();
         $("#inputArea").hide();
+        $("#demoBtn").hide();
+        $("#recBtn").hide();
+
+    });
+
+    $('#backBtn').click(function(){
+        $("#recArea").hide();
+        $("#inputArea").show();
+        $("#demoBtn").show();
+        $("#recBtn").show();
     });
 
         // $("#reconcilePanel").show();

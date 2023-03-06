@@ -6,20 +6,35 @@
   }
 
 .bg-lblue {
-    background-color: #e3ebf7;
+    background-color: #e3ebf7 !important;
 
   }
 
+
 .bg-dblue {
     background-color: #3b71ca;
+
+  }
+.c-dblue {
+    color: #3b71ca;
 
   }
 .bg-lyellow {
     background-color: #FFE082;
 
   }
+.c-dyellow {
+    color: #E4A11B;
+
+  }
+.c-red {
+    color: #DC4C64;
+  }
+
+  
+
   .bg-vlyellow {
-    background-color: #FFF8E1;
+    background-color: #FFF8E1 !important;
   }
   .border-lyellow {
     list-style-position:inside;
@@ -29,13 +44,22 @@
   }
   
   .bg-lightred {
-    background-color: #FFCDD2;
+    background-color: #FFCDD2 !important;
 
   }
 
   .bg-lgreen {
-    background-color: #DCEDC8;
+    background-color: #DCEDC8 !important;
 
   }
 
   .bi { vertical-align: -0.1em; }
+
+  .nav-tabs .nav-item .nav-link {
+    color: #555;
+  }
+
+  .nav-tabs .nav-item .nav-link.active {
+    color: #3b71ca;
+  }
+  
