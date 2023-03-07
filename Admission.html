@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedDiff</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -74,9 +76,26 @@
                                 
     
                             </tbody>
-                        </table>
+                        </table> 
+                        <div class = "row">
+
+                            <div class="input-group mb-3 col-6">
+                                <span class="input-group-text" id="basic-addon1">Add Medication:</span>
+                                <input type="text" class="form-control" id="addNewMed" placeholder="Search">
+                                <button class="btn btn-primary bg-dblue" type="button" id="addMedBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                            
                         <div class="row">
                             <div class="d-grid gap-2 col-4 mx-auto">
+
+
+                                  <br>
                                 <button type="button" class="btn btn-primary bg-dblue border-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
                                     <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
@@ -116,6 +135,7 @@
 
     <script src="js/diff.js"></script>
     <script src="js/jquery-3.6.3.slim.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/parser.js"></script>
     <script src="js/matching.js"></script>
     <script src="js/MedClasses.js"></script>

@@ -45,5 +45,31 @@ $(document).ready(function(){
         $("#recBtn").show();
     });
 
+
+        var availableTags = [
+          "NYSTATIN 100000 UNT/ML SUSP,ORAL,5ML",
+          "ALBUTEROL 100MCG/IPRATROPIUM BR 20MCG/SPRAY INHALER,ORAL,4GM",
+          "ALBUTEROL 90MCG/ACTUAT (CFC-F) INHL,ORAL,18GM DOSE COUNTER",
+          "ALBUTEROL 90MCG/ACTUAT (CFC-F) INHL,ORAL,8.5GM DOSE COUNTER",
+        ];
+
+        $( "#addNewMed" ).autocomplete({
+          source: availableTags
+        });
+
+
+        $("#addMedBtn").click(function(){
+            let medTokens = medStringsToTokens([$("#addNewMed").val()]);
+            let newMed = new MedEntry(medTokens,ListID.outpatient,ListType.out);
+            let nextRow = $("#medList tr").length;
+
+            let medstring = newMed.tokens.join(" ");
+            let switchstring = ["<td class = 'col-4'><div class='form-check form-switch'><input class='form-check-input med-taking' type='radio' name='med-",nextRow,"' id='taking-",nextRow,"' ><label class='form-check-label' for='taking-",nextRow,"'>Taking</label></div><div class='form-check form-switch'><input class='form-check-input med-different' type='radio' name='med-",nextRow,"' id='takingDifferently-",nextRow,"'><label class='form-check-label' for='takingDifferently-",nextRow,"'>Taking Differently</label></div><div class='form-check form-switch'><input class='form-check-input med-not' type='radio' name='med-",nextRow,"' id='notTaking-",nextRow,"'><label class='form-check-label' for='notTaking-",nextRow,"'>Not Taking</label></div></td>"].join("");
+            let htmlstring = ["<tr class = 'd-flex'><td class = 'col-8'>",medstring,"</td>",switchstring,"</tr>"].join("");
+
+            $("#medList").append(htmlstring);
+
+        });
+
         // $("#reconcilePanel").show();
     });
