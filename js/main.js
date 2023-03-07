@@ -144,8 +144,13 @@ $(document).ready(function(){
         activateTooltips();
     });
 
-        console.log(refMeds)
-        $("#diffList").show();
+        $("#comparePane").show();
+        $("#inputArea").hide();
+    });
+
+    $('#backBtn').click(function(){
+        $("#comparePane").hide();
+        $("#inputArea").show();
     });
 
 

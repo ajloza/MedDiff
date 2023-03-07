@@ -44,8 +44,8 @@
           </div>
         <div class="row">
                 
-            <div class="col-12 col-md-8">
-                <div class="p-3 mb-4 bg-white rounded-3 h-100">
+            <div class="col-xl-10 mx-auto" id="inputArea">
+                <div class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100">
 
                 <div class="row">
                     <div class="col-12 col-md-6">
@@ -67,12 +67,12 @@
                     <button id="demoBtn" class="btn btn-outline-secondary">Demo Text</button>  
                 </div>
                 </div>
-     </div>
-            <div class="col-12 col-md-4">
-                <div class="p-3 mb-4 bg-light rounded-3 h-100" >
+            </div>
+            <div class="col-xl-10 mx-auto" id="comparePane" style="display: none;">
+                <div class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100">
                     <h5>Comparison</h5>
                     <hr>
-                    <div id="diffList" class="p-3 mb-4 rounded-3 bg-light" style="height: 87%; display: none;">
+                    <div id="diffList" class="p-3 mb-4 rounded-3 bg-white" style="height: 87%;">
                         <h6>Matched</h6>
                         <ul id = "matched" class="list-group list-group-flush" style="font-size: 10pt;">
                             
@@ -90,6 +90,10 @@
                         </ul>
                         <br>
                         <p id="matchType" <p class="text-muted" st></p>
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2 col-4 mx-auto" style="display: none;"">
+                        <button id="backBtn" class="btn btn-primary bg-dblue border-none">Back to Input</button>  
                     </div>
                 </div>
             </div>
