@@ -68,6 +68,7 @@ $(document).ready(function(){
             let htmlstring = ["<tr class = 'd-flex'><td class = 'col-8'>",medstring,"</td>",switchstring,"</tr>"].join("");
 
             $("#medList").append(htmlstring);
+            $("#addNewMed").val("")
 
         });
 
