@@ -76,10 +76,40 @@
 
             </div>
 
-            <div id = "comparisonPane" class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100" style="display: none;">
+            <div id = "comparisonPane" class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100 col-lg-10 mx-auto" style="display: none;">
                 <h5>Comparison</h5>
                 <hr>
-
+                <div class="accordion col-md-10 mx-auto" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                            Comparison guide
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <p> The outpatient medication list for discharge (discharge list) is directly compared to the outpatient list on admission and the results are shown in the first column.</p>
+                                <ul>
+                                    <li><strong>Medications Continued on Discharge</strong> have an <strong>exact</strong> match between the admission and discharge lists</li>
+                                    <li><strong>Medications Modified on Discharge</strong> match on medication name but differ on details.</li>
+                                    <li><strong>Medications Added on Discharge</strong> are present on the discharge list but not on the admission list</li>
+                                    <li><strong>Medications Removed on Discharge</strong> are present on the admission list but not on the discharge list</li>
+                                    <ul>
+                                        <li> For each of these, the status of a matching inpatient medication is shown. If a match is found, this icon
+                                            <span class='c-dyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='Inpatient medication details shown here'>
+                                                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-prescription' viewBox='0 0 16 16'>    <path d='M5.5 6a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 1 0V9h.293l2 2-1.147 1.146a.5.5 0 0 0 .708.708L9 11.707l1.146 1.147a.5.5 0 0 0 .708-.708L9.707 11l1.147-1.146a.5.5 0 0 0-.708-.708L9 10.293 7.695 8.987A1.5 1.5 0 0 0 7.5 6h-2ZM6 7h1.5a.5.5 0 0 1 0 1H6V7Z'/>    <path d='M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1V1Zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4H4ZM3 3h10V1H3v2Z'/>  </svg>
+                                            </span>
+                                            is shown. Hover to view the medication details. If no match is found, this icon 
+                                            <span class="c-red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="No Matching Inpatient Medication"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/></svg></span>
+                                            is shown.
+                                        </li>
+                                    </ul>
+                                    <li>Additional Inpatient Meds for Review are medications present on the inpatient list but not on any outpatient list.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="diffList" class="p-3 mb-4 rounded-3 bg-white col-md-10 mx-auto" style="height: 87%">
                     <br>
