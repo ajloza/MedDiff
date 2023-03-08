@@ -44,7 +44,7 @@
 
         <div class="row">
                 
-            <div class="col-12" id="inputPane">
+            <div class="col-lg-10 mx-auto" id="inputPane">
                 <ul class="nav nav-tabs" id="inputTabList" role="tablist">
                     <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab" aria-controls="admission" aria-selected="true">Admission</button>
@@ -79,7 +79,7 @@
             <div id = "comparisonPane" class="p-3 mb-4 bg-white shadow-sm rounded-3 h-100 col-lg-10 mx-auto" style="display: none;">
                 <h5>Comparison</h5>
                 <hr>
-                <div class="accordion col-md-10 mx-auto" id="accordionPanelsStayOpenExample">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                         <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
@@ -91,11 +91,11 @@
                                 <p> The outpatient medication list for discharge (discharge list) is directly compared to the outpatient list on admission and the results are shown in the first column.</p>
                                 <ul>
                                     <li><strong>Medications Continued on Discharge</strong> have an <strong>exact</strong> match between the admission and discharge lists</li>
-                                    <li><strong>Medications Modified on Discharge</strong> match on medication name but differ on details.</li>
+                                    <li><strong>Medications Modified on Discharge</strong> match on medication name but differ on details</li>
                                     <li><strong>Medications Added on Discharge</strong> are present on the discharge list but not on the admission list</li>
                                     <li><strong>Medications Removed on Discharge</strong> are present on the admission list but not on the discharge list</li>
                                     <ul>
-                                        <li> For each of these, the status of a matching inpatient medication is shown. If a match is found, this icon
+                                        <li> For each of these, the status of a matching inpatient medication is shown in the second column. If a match is found, this icon
                                             <span class='c-dyellow' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-original-title='Inpatient medication details shown here'>
                                                 <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-prescription' viewBox='0 0 16 16'>    <path d='M5.5 6a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 1 0V9h.293l2 2-1.147 1.146a.5.5 0 0 0 .708.708L9 11.707l1.146 1.147a.5.5 0 0 0 .708-.708L9.707 11l1.147-1.146a.5.5 0 0 0-.708-.708L9 10.293 7.695 8.987A1.5 1.5 0 0 0 7.5 6h-2ZM6 7h1.5a.5.5 0 0 1 0 1H6V7Z'/>    <path d='M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1V1Zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4H4ZM3 3h10V1H3v2Z'/>  </svg>
                                             </span>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div id="diffList" class="p-3 mb-4 rounded-3 bg-white col-md-10 mx-auto" style="height: 87%">
+                <div id="diffList" class="p-3 mb-4 rounded-3 bg-white" style="height: 87%">
                     <br>
 
                     <table class="table table-hover bg-white">
